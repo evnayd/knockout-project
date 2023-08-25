@@ -1,3 +1,9 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -17,7 +23,6 @@ form {
 }
 
 .accordion {
-  border-bottom: 1px solid #dfe4ef;
 }
 
 .accordion:first-child {
@@ -29,6 +34,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 1px solid #dfe4ef;
 }
 
 .accordion__label h2 {
@@ -54,7 +60,7 @@ form {
   background-image: url("img/arrow-down.svg");
   background-repeat: no-repeat;
   background-position: 50%;
-  transition: background-position 0.3s ease;
+  transition: background-position 0.4s ease;
 }
 
 .accordion__btn.active {
@@ -85,8 +91,15 @@ form {
 }
 
 .option {
-  /*border: 1px solid #dfe4ef;*/
+  padding: 10px 15px;
+  border: 1px solid #dfe4ef;
   border-top: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option h2 {
   font-size: 13px;
   font-style: normal;
   font-weight: 400;

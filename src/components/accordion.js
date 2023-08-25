@@ -21,7 +21,11 @@ ko.components.register("accordion", {
         </div>
         <div class="accordion__options" data-bind="css: { open: isOpen }">
           <div data-bind="foreach: options">
-            <div  class="option"  data-bind="text: label"></div>
+            <div  class="option"  >
+            <h2 data-bind="text: label"></h2>
+            <button class="accordion__dragndrop"></button>
+            </div>
+           
           </div>
         </div>
       </div>
