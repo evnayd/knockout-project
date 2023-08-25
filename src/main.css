@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Fira Sans", Helvetica, sans-serif;
+  color: #000;
 }
 
 .container {
@@ -14,15 +16,28 @@ body {
   margin-bottom: 40px;
 }
 
-.accordion__label {
-  border-bottom: 1px solid blue;
-  margin-bottom: 10px;
+.accordion__options {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease, opacity 0.2s ease;
 }
 
-.accordion__options {
-  background-color: bisque;
-  /*height: 0;
-  overflow: hidden;
-  transition: all 0.5s;
-  position: relative;*/
+.accordion__label {
+  cursor: pointer;
+  border: 1px solid green;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.accordion__options.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.option {
+  border: 1px solid red;
+  margin-bottom: 2px;
 }
