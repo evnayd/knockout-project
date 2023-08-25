@@ -23,7 +23,7 @@ ko.components.register("form-component", {
     };
   },
   template: `
-    <form>
+    <form class="container">
       <div data-bind="foreach: accordions">
         <accordion params="title: $data.title, options: $data.options"></accordion>
       </div>

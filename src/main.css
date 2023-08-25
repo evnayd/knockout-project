@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+}
+
+.accordion {
+  margin-bottom: 40px;
+}
+
+.accordion__label {
+  border-bottom: 1px solid blue;
+  margin-bottom: 10px;
+}
+
+.accordion__options {
+  background-color: bisque;
+  /*height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+  position: relative;*/
+}
