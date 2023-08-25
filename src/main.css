@@ -12,8 +12,63 @@ body {
   margin: 0 auto;
 }
 
+form {
+  /*border: 1px solid #dfe4ef;*/
+}
+
 .accordion {
-  margin-bottom: 40px;
+  border-bottom: 1px solid #dfe4ef;
+}
+
+.accordion:first-child {
+}
+
+.accordion__label {
+  cursor: pointer;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion__label h2 {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  margin: 0;
+}
+
+.accordion__container {
+  display: flex;
+}
+
+.accordion__btn {
+  border: 1.5px solid #dfe4ef;
+  border-radius: 50%;
+  outline: none;
+  background-color: transparent;
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  background-image: url("img/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transition: background-position 0.3s ease;
+}
+
+.accordion__btn.active {
+  background-image: url("img/arrow-up.svg");
+}
+
+.accordion__dragndrop {
+  width: 8px;
+  height: 15px;
+  border: none;
+  background-image: url("img/dnd-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
 }
 
 .accordion__options {
@@ -21,15 +76,7 @@ body {
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.2s ease, opacity 0.2s ease;
-}
-
-.accordion__label {
-  cursor: pointer;
-  border: 1px solid green;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 16px;
+  padding-left: 15px;
 }
 
 .accordion__options.open {
@@ -38,6 +85,10 @@ body {
 }
 
 .option {
-  border: 1px solid red;
-  margin-bottom: 2px;
+  /*border: 1px solid #dfe4ef;*/
+  border-top: 1px solid transparent;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14.04px;
 }
