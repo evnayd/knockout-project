@@ -1,13 +1,16 @@
 ko.components.register("accordion", {
   viewModel: function (params) {
-    this.isOpen = ko.observable(false); // Start with the accordion closed
+    this.isOpen = ko.observable(false);
 
-    this.toggleAccordion = function () {
+    this.toggleAccordion = function (event) {
       this.isOpen(!this.isOpen());
     };
 
     this.title = params.title;
     this.options = params.options;
+    this.stopPropagation = function (event) {
+      event.stopPropagation();
+    };
   },
   template: `
     <div>
@@ -21,9 +24,9 @@ ko.components.register("accordion", {
         </div>
         <div class="accordion__options" data-bind="css: { open: isOpen }">
           <div data-bind="foreach: options">
-            <div  class="option"  >
+            <div  class="option" >
             <h2 data-bind="text: label"></h2>
-            <button class="accordion__dragndrop"></button>
+            <button class="accordion__dragndrop" data-bind="click: function(data, event) { event.stopPropagation(); }"></button>
             </div>
            
           </div>

@@ -38,6 +38,7 @@ body {
 
 .accordion__container {
   display: flex;
+  align-items: center;
 }
 
 .accordion__btn {
@@ -66,6 +67,11 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #fff;
+  cursor: pointer;
+}
+
+.accordion__dragndrop:active {
+  border: 1px solid red;
 }
 
 .accordion__options {
@@ -87,7 +93,7 @@ body {
   /*border-top: 1px solid transparent;*/
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   /*margin-bottom: -1px;*/
   margin-top: -1px;
 }
