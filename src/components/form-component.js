@@ -18,14 +18,21 @@ ko.components.register("form-component", {
       },
     ];
 
+    var accordionsViewModels = accordions.map(function (accordionData) {
+      return {
+        title: accordionData.title,
+        options: accordionData.options,
+      };
+    });
+
     return {
-      accordions: accordions,
+      accordions: accordionsViewModels,
     };
   },
   template: `
     <form>
       <div data-bind="foreach: accordions">
-        <accordion params="title: $data.title, options: $data.options"></accordion>
+        <accordion params="title: title, options: options"></accordion>
       </div>
     </form>
   `,
