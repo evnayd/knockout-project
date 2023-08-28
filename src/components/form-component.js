@@ -1,6 +1,7 @@
 ko.components.register("form-component", {
   viewModel: function (params) {
-    var accordions = [
+    let self = this;
+    let accordions = [
       {
         title: "Обязательные для всех",
         options: [
@@ -25,14 +26,35 @@ ko.components.register("form-component", {
       };
     });
 
+    self.handleDragStart = function (data, event) {
+      //event.preventDefault();
+      console.log("draggin");
+      console.log("data", data);
+      var draggedItemData = ko.toJSON(data);
+      event.dataTransfer.setData("text/plain", draggedItemData);
+      console.log("draggedItemData", draggedItemData);
+    };
+
+    self.handleDrop = function (data, event) {};
+
+    self.handleDragOver = function (event) {
+      console.log("over");
+      event.preventDefault;
+    };
+
+    self.handleDragEnter = function (event) {
+      console.log("enter");
+      event.preventDefault;
+    };
+
     return {
       accordions: accordionsViewModels,
     };
   },
   template: `
-    <form>
-      <div data-bind="foreach: accordions">
-        <accordion params="title: title, options: options"></accordion>
+    <form >
+      <div data-bind="foreach: accordions ">
+        <accordion  params="title: title, options: options"></accordion>
       </div>
     </form>
   `,
